@@ -35,3 +35,4 @@
 10.30.8.13 - - [11/May/2025:21:22:19 -0700] "GET / HTTP/1.1" 200 517 "http://wsr.ru/" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Safari/537.36"
 10.30.8.13 - - [11/May/2025:21:23:28 -0700] "GET / HTTP/1.1" 200 518 "http://wsr.ru/" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Safari/537.36"
 10.30.8.13 - - [11/May/2025:21:27:04 -0700] "GET / HTTP/1.1" 200 210 "http://wsr.ru/" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Safari/537.36"
+10.30.8.13 - - [11/May/2025:21:43:15 -0700] "GET / HTTP/1.1" 200 210 "http://wsr.ru/" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Safari/537.36"
