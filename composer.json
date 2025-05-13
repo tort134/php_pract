@@ -1,0 +1,22 @@
+{
+    "name": "tort134/php_prac",
+    "description": "desc",
+    "type": "project",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "tort134",
+            "email": "knatashambler.18@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "php": "^7.4 | ^8.1"
+    },
+    "autoload": {
+        "psr-4": {
+            "Src\\": "core/Src/",
+            "": "app/"
+        }
+    }
+}

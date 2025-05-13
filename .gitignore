@@ -1,3 +1,5 @@
 access.log
 error.log
 .idea
+/vendor/
+composer.lock
