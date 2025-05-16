@@ -26,6 +26,12 @@ class Request{
         return $_FILES;
     }
 
-    public function
+    public function __get($key){
+        if(array_key_exists($key, $this->body)){
+            return $this->body[$key];
+        }
+
+       throw new Error('Accessing a non-existing property');
+    }
 
 }
