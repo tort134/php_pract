@@ -18,6 +18,7 @@ class View{
 
     private function getRoot(): string{
         global $app;
+
         $root = $app->settings->getRootPath();
         $path = $app->settings->getViewsPath();
 
@@ -41,11 +42,13 @@ class View{
             extract($data, EXTR_PREFIX_SAME, '');
 
             ob_start();
+
             require $path;
             $content = ob_get_clean();
 
             return require($this->getPathToMain());
         }
+
         throw new Exception("Error render");
     }
 
