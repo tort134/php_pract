@@ -39,4 +39,16 @@ class Route{
 
         call_user_func([new $class, $action], new Request());
     }
+
+    public function redirect(string $url): void{
+        header('Location: ' . $url);
+    }
+
+    public static function getUrl(string $url){
+        return self::$prefix . $url;
+    }
+
+    public function __construct(string $prefix = ''){
+        self::setPrefix($prefix);
+    }
 }
