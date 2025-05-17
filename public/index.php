@@ -7,8 +7,8 @@
         $app = require_once __DIR__ . '/../core/bootstrap.php';
         $app->run();
 
-    } catch(\Throwable $exeption){
+    } catch(\Throwable $exception){
         echo '<pre>';
-        print_r($exeption);
+        print_r($exception);
         echo '</pre>';
     }
