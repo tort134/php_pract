@@ -6,6 +6,6 @@
 
         public function getId(): int;
 
-        public function attemptIdentify(array $credentials);
+        public function attemptIdentity(array $credentials);
 
     }

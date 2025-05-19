@@ -32,7 +32,7 @@ class User extends Model implements IdentityInterface{
         return $this->id;
     }
 
-    public function attemptIdentify(array $credentials){
+    public function attemptIdentity(array $credentials){
         return self::where(['login' => $credentials['login'],
                             'password' => md5($credentials['password'])])->first();
     }

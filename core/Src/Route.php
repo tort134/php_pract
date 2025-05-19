@@ -83,7 +83,7 @@ class Route
 
         $routeInfo = $dispatcher->dispatch($httpMethod, $uri);
 
-        switch ($routeInfo[0]) {
+        switch ($routeInfo[0]){
             case Dispatcher::NOT_FOUND:
                 throw new Error('NOT_FOUND');
             case Dispatcher::METHOD_NOT_ALLOWED:

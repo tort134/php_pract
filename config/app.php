@@ -3,6 +3,6 @@
       'auth' => \Src\Auth\Auth::class,
       'identity' => \Model\User::class,
       'routeMiddleware' => [
-          'auth' => \Middlewares\AuthMiddaleware::class
+          'auth' => \Middlewares\AuthMiddleware::class
       ]
     ];
