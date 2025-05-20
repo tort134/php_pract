@@ -6,7 +6,7 @@
     function getConfigs(string $path = DIR_CONFIG): array{
         $settings = [];
 
-        foreach (scandir(__DIR__ . $path) as $file) {
+        foreach(scandir(__DIR__ . $path) as $file){
             $name = explode('.', $file)[0];
 
             if(!empty($name)){

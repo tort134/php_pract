@@ -8,8 +8,7 @@ use Illuminate\Events\Dispatcher;
 use Illuminate\Database\Capsule\Manager as Capsule;
 use Src\Auth\Auth;
 
-class Application
-{
+class Application{
     private Settings $settings;
     private Route $route;
     private Capsule $dbManager;
@@ -25,8 +24,7 @@ class Application
         $this->auth::init(new $this->settings->app['identity']);
     }
 
-    public function __get($key)
-    {
+    public function __get($key){
         switch ($key) {
             case 'settings':
                 return $this->settings;

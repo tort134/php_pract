@@ -10,20 +10,16 @@ use FastRoute\DataGenerator\MarkBased;
 use FastRoute\Dispatcher\MarkBased as Dispatcher;
 use Src\Traits\SingletonTrait;
 
-class Route
-{
+class Route{
 
     use SingletonTrait;
-
 
     private string $currentRoute = '';
     private $currentHttpMethod;
 
     private string $prefix = '';
 
-
     private RouteCollector $routeCollector;
-
 
     public static function add($httpMethod, string $route, array $action): self{
         self::single()->routeCollector->addRoute($httpMethod, $route, $action);
@@ -33,12 +29,10 @@ class Route
         return self::single();
     }
 
-
     public static function group(string $prefix, callable $callback): void{
         self::single()->routeCollector->addGroup($prefix, $callback);
         Middleware::single()->group($prefix, $callback);
     }
-
 
     private function __construct(){
         $this->routeCollector = new RouteCollector(new Std(), new MarkBased());
@@ -54,28 +48,24 @@ class Route
         header('Location: ' . $this->getUrl($url));
     }
 
-    public function getUrl(string $url): string
-    {
+    public function getUrl(string $url): string{
         return $this->prefix . $url;
     }
 
-
-    public function middleware(...$middlewares): self
-    {
+    public function middleware(...$middlewares): self{
         Middleware::single()->add($this->currentHttpMethod, $this->currentRoute, $middlewares);
+
         return $this;
     }
 
-    public function start(): void
-    {
-
+    public function start(): void{
         $httpMethod = $_SERVER['REQUEST_METHOD'];
         $uri = $_SERVER['REQUEST_URI'];
-
 
         if (false !== $pos = strpos($uri, '?')) {
             $uri = substr($uri, 0, $pos);
         }
+
         $uri = rawurldecode($uri);
         $uri = substr($uri, strlen($this->prefix));
 
