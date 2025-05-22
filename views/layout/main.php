@@ -12,7 +12,6 @@
 <header>
     <nav>
         <a href="<?= app()->route->getUrl('/hello') ?>">Главная</a>
-        <a href="<?= app()->route->getUrl('/admin_panel')?>">Панель управления</a>
         <?php
         if(!app()->auth::check()):
             ?>
@@ -22,6 +21,20 @@
         else:
             ?>
             <a href="<?= app()->route->getUrl('/logout') ?>">Выход (<?= app()->auth::user()->login ?>)</a>
+            <?php
+            if(app()->auth::user()->role_id == 1):
+                ?>
+                <a href="<?= app()->route->getUrl('/admin_panel')?>">Панель админа</a>
+            <?php
+            endif;
+            ?>
+            <?php
+            if(app()->auth::user()->role_id == 2):
+                ?>
+                <a href="<?= app()->route->getUrl('/sisadmin_panel')?>">Панель сисадмина</a>
+            <?php
+            endif;
+            ?>
         <?php
         endif;
         ?>

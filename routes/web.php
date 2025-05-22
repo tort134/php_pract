@@ -5,4 +5,4 @@
     Route::add(['GET', 'POST'], '/signup', [Controller\Site::class, 'signup']);
     Route::add(['GET', 'POST'], '/login', [Controller\Site::class, 'login']);
     Route::add('GET', '/logout', [Controller\Site::class, 'logout']);
-    Route::add('GET', '/admin_panel', [Controller\Site::class, 'adminPanel']);
+    Route::add(['GET', 'POST'], '/admin_panel', [Controller\AdminPanel::class, 'adminPanel'])->middleware('auth');

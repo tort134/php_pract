@@ -5,6 +5,7 @@ namespace Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Src\Auth\IdentityInterface;
+use Src\View;
 
 class User extends Model implements IdentityInterface{
 
@@ -14,6 +15,7 @@ class User extends Model implements IdentityInterface{
     protected $fillable = [
       'login',
       'password',
+      'role_id'
     ];
 
     protected static function booted(){
